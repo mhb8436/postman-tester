@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Postman Collection Test Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .header { background: #f5f5f5; padding: 20px; border-radius: 5px; margin-bottom: 20px; }
+        .collection { border: 1px solid #ddd; margin-bottom: 20px; border-radius: 5px; }
+        .collection-header { background: #f8f9fa; padding: 15px; border-bottom: 1px solid #ddd; }
+        .collection-name { font-size: 1.2em; font-weight: bold; margin: 0; }
+        .collection-stats { color: #666; margin-top: 5px; }
+        .test-item { padding: 10px 15px; border-bottom: 1px solid #eee; }
+        .test-item:last-child { border-bottom: none; }
+        .test-success { border-left: 4px solid #28a745; }
+        .test-failed { border-left: 4px solid #dc3545; }
+        .test-name { font-weight: bold; }
+        .test-details { color: #666; margin-top: 5px; }
+        .error-message { color: #dc3545; font-style: italic; margin-top: 5px; }
+        .summary { background: #e9ecef; padding: 15px; border-radius: 5px; }
+        .success-rate { font-size: 1.1em; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🧪 Postman Collection Test Report</h1>
+        <p>생성 시간: 2025-09-24 16:43:59</p>
+    </div>
+
+    
+    <div class="collection">
+        <div class="collection-header">
+            <h2 class="collection-name">JSONPlaceholder API 테스트</h2>
+            <div class="collection-stats">
+                파일: test-collection.json<br>
+                실행시간: 1.42초 | 
+                총 10개 테스트 | 
+                성공: 10개 | 
+                실패: 0개
+            </div>
+        </div>
+        
+        
+        <div class="test-item test-success">
+            <div class="test-name">
+                ✅ 모든 게시물 조회
+            </div>
+            <div class="test-details">
+                GET https://jsonplaceholder.typicode.com/posts<br>
+                응답: HTTP 200 (0.32초)
+            </div>
+            
+        </div>
+        
+        <div class="test-item test-success">
+            <div class="test-name">
+                ✅ 특정 게시물 조회
+            </div>
+            <div class="test-details">
+                GET https://jsonplaceholder.typicode.com/posts/1<br>
+                응답: HTTP 200 (0.06초)
+            </div>
+            
+        </div>
+        
+        <div class="test-item test-success">
+            <div class="test-name">
+                ✅ 모든 사용자 조회
+            </div>
+            <div class="test-details">
+                GET https://jsonplaceholder.typicode.com/users<br>
+                응답: HTTP 200 (0.07초)
+            </div>
+            
+        </div>
+        
+        <div class="test-item test-success">
+            <div class="test-name">
+                ✅ 특정 사용자 조회
+            </div>
+            <div class="test-details">
+                GET https://jsonplaceholder.typicode.com/users/1<br>
+                응답: HTTP 200 (0.06초)
+            </div>
+            
+        </div>
+        
+        <div class="test-item test-success">
+            <div class="test-name">
+                ✅ 새 게시물 생성
+            </div>
+            <div class="test-details">
+                POST https://jsonplaceholder.typicode.com/posts<br>
+                응답: HTTP 201 (0.23초)
+            </div>
+            
+        </div>
+        
+        <div class="test-item test-success">
+            <div class="test-name">
+                ✅ 게시물 업데이트
+            </div>
+            <div class="test-details">
+                PUT https://jsonplaceholder.typicode.com/posts/1<br>
+                응답: HTTP 200 (0.25초)
+            </div>
+            
+        </div>
+        
+        <div class="test-item test-success">
+            <div class="test-name">
+                ✅ 게시물 삭제
+            </div>
+            <div class="test-details">
+                DELETE https://jsonplaceholder.typicode.com/posts/1<br>
+                응답: HTTP 200 (0.21초)
+            </div>
+            
+        </div>
+        
+        <div class="test-item test-success">
+            <div class="test-name">
+                ✅ 댓글 조회
+            </div>
+            <div class="test-details">
+                GET https://jsonplaceholder.typicode.com/posts/1/comments<br>
+                응답: HTTP 200 (0.07초)
+            </div>
+            
+        </div>
+        
+        <div class="test-item test-success">
+            <div class="test-name">
+                ✅ 앨범 조회
+            </div>
+            <div class="test-details">
+                GET https://jsonplaceholder.typicode.com/albums<br>
+                응답: HTTP 200 (0.07초)
+            </div>
+            
+        </div>
+        
+        <div class="test-item test-success">
+            <div class="test-name">
+                ✅ 사진 조회
+            </div>
+            <div class="test-details">
+                GET https://jsonplaceholder.typicode.com/photos?albumId=1&amp;_limit=5<br>
+                응답: HTTP 200 (0.07초)
+            </div>
+            
+        </div>
+        
+    </div>
+    
+
+    <div class="summary">
+        <h3>📋 전체 요약</h3>
+        <p>총 1개 컬렉션, 10개 테스트</p>
+        <p class="success-rate">
+            성공률: 100.0% 
+            (10개 성공 / 0개 실패)
+        </p>
+    </div>
+</body>
+</html>

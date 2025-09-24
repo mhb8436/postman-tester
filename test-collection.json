@@ -1,0 +1,178 @@
+{
+  "info": {
+    "name": "JSONPlaceholder API 테스트",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "모든 게시물 조회",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://jsonplaceholder.typicode.com/posts",
+          "protocol": "https",
+          "host": ["jsonplaceholder", "typicode", "com"],
+          "path": ["posts"]
+        }
+      }
+    },
+    {
+      "name": "특정 게시물 조회",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://jsonplaceholder.typicode.com/posts/1",
+          "protocol": "https",
+          "host": ["jsonplaceholder", "typicode", "com"],
+          "path": ["posts", "1"]
+        }
+      }
+    },
+    {
+      "name": "모든 사용자 조회",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://jsonplaceholder.typicode.com/users",
+          "protocol": "https",
+          "host": ["jsonplaceholder", "typicode", "com"],
+          "path": ["users"]
+        }
+      }
+    },
+    {
+      "name": "특정 사용자 조회",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://jsonplaceholder.typicode.com/users/1",
+          "protocol": "https",
+          "host": ["jsonplaceholder", "typicode", "com"],
+          "path": ["users", "1"]
+        }
+      }
+    },
+    {
+      "name": "새 게시물 생성",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"테스트 게시물\",\n  \"body\": \"이것은 테스트용 게시물입니다.\",\n  \"userId\": 1\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://jsonplaceholder.typicode.com/posts",
+          "protocol": "https",
+          "host": ["jsonplaceholder", "typicode", "com"],
+          "path": ["posts"]
+        }
+      }
+    },
+    {
+      "name": "게시물 업데이트",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": 1,\n  \"title\": \"업데이트된 제목\",\n  \"body\": \"업데이트된 내용입니다.\",\n  \"userId\": 1\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://jsonplaceholder.typicode.com/posts/1",
+          "protocol": "https",
+          "host": ["jsonplaceholder", "typicode", "com"],
+          "path": ["posts", "1"]
+        }
+      }
+    },
+    {
+      "name": "게시물 삭제",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://jsonplaceholder.typicode.com/posts/1",
+          "protocol": "https",
+          "host": ["jsonplaceholder", "typicode", "com"],
+          "path": ["posts", "1"]
+        }
+      }
+    },
+    {
+      "name": "댓글 조회",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://jsonplaceholder.typicode.com/posts/1/comments",
+          "protocol": "https",
+          "host": ["jsonplaceholder", "typicode", "com"],
+          "path": ["posts", "1", "comments"]
+        }
+      }
+    },
+    {
+      "name": "앨범 조회",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://jsonplaceholder.typicode.com/albums",
+          "protocol": "https",
+          "host": ["jsonplaceholder", "typicode", "com"],
+          "path": ["albums"]
+        }
+      }
+    },
+    {
+      "name": "사진 조회",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://jsonplaceholder.typicode.com/photos?albumId=1&_limit=5",
+          "protocol": "https",
+          "host": ["jsonplaceholder", "typicode", "com"],
+          "path": ["photos"],
+          "query": [
+            {
+              "key": "albumId",
+              "value": "1"
+            },
+            {
+              "key": "_limit",
+              "value": "5"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

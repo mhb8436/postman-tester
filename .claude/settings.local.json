@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(go mod init:*)",
+      "Bash(GOOS=windows GOARCH=amd64 go build -ldflags=\"-s -w\" -o postman-tester-windows.exe)",
+      "Bash(ls:*)"
+    ],
+    "deny": []
+  }
+}

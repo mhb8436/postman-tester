@@ -1,0 +1,136 @@
+===============================================
+Postman Collection Tester - Windows 11 사용법
+===============================================
+
+📁 필요한 파일들
+---------------
+1. postman-tester-windows.exe (실행 파일)
+2. test-collection.json (테스트용 컬렉션 파일)
+3. 본인의 Postman JSON 컬렉션 파일들 (선택사항)
+
+🚀 기본 사용법
+--------------
+1. 파일들을 적당한 폴더에 복사
+2. Windows 터미널(cmd) 또는 PowerShell 실행
+3. 파일이 있는 폴더로 이동
+   예: cd C:\Users\사용자명\Downloads\api-test
+
+💻 명령어 예시
+--------------
+
+1. 기본 테스트 (JSONPlaceholder API 테스트)
+   postman-tester-windows.exe -file test-collection.json
+
+2. 상세 출력으로 테스트
+   postman-tester-windows.exe -file test-collection.json -verbose
+
+3. 본인의 컬렉션 파일 테스트
+   postman-tester-windows.exe -file 내파일.json
+
+4. HTML 리포트 생성
+   postman-tester-windows.exe -file test-collection.json -output report.html -format html
+
+5. JSON 리포트 생성
+   postman-tester-windows.exe -file test-collection.json -output report.json -format json
+
+6. 디렉토리 전체 테스트 (postman 폴더의 모든 .json 파일)
+   postman-tester-windows.exe -dir postman
+
+7. 병렬 실행 (3개 컬렉션 동시 처리)
+   postman-tester-windows.exe -dir postman -parallel 3
+
+8. 도움말 보기
+   postman-tester-windows.exe -help
+
+📊 출력 형식 옵션
+-----------------
+- text (기본값): 콘솔에 텍스트 출력
+- json: JSON 형식 리포트
+- html: HTML 웹페이지 리포트
+
+⚙️ 전체 옵션 목록
+------------------
+-file string
+    단일 Postman 컬렉션 파일 지정
+
+-dir string  
+    컬렉션 파일들이 있는 디렉토리 (기본값: "./postman")
+
+-output string
+    결과를 저장할 파일명 (선택사항, 기본값: 콘솔 출력)
+
+-format string
+    출력 형식: text, json, html (기본값: "text")
+
+-parallel int
+    병렬 실행할 컬렉션 수 (기본값: 1)
+
+-timeout int
+    요청 타임아웃(초) (기본값: 30)
+
+-verbose
+    상세 출력 모드
+
+-help
+    도움말 표시
+
+🛠️ 폴더 구조 예시
+------------------
+C:\api-test\
+├── postman-tester-windows.exe
+├── test-collection.json
+├── postman\
+│   ├── collection1.json
+│   ├── collection2.json
+│   └── collection3.json
+└── reports\
+    ├── report.html
+    └── report.json
+
+📝 실행 예시 (단계별)
+--------------------
+1. Windows 키 + R 누르기
+2. "cmd" 입력 후 Enter
+3. 파일 있는 폴더로 이동:
+   cd C:\Users\사용자명\Downloads
+
+4. 테스트 실행:
+   postman-tester-windows.exe -file test-collection.json -verbose
+
+5. 결과 확인:
+   - 콘솔에서 실시간 결과 확인
+   - HTML 리포트 생성시 브라우저에서 열어서 확인
+
+🎯 성공적인 실행 결과 예시
+--------------------------
+🚀 1개의 Postman 컬렉션을 테스트합니다...
+
+[1/1] test-collection.json 실행 중...
+  📄 컬렉션: JSONPlaceholder API 테스트
+  ✅ 10개 모두 성공 (2.34s)
+
+📋 전체 테스트 요약
+컬렉션: 1개 (성공: 1개)
+테스트: 10개 (성공: 10개, 실패: 0개)
+🟢 모든 테스트가 성공했습니다!
+
+❓ 문제 해결
+------------
+Q: "파일을 찾을 수 없습니다" 오류
+A: 파일 경로 확인, 파일명에 공백 있으면 따옴표로 감싸기
+   예: postman-tester-windows.exe -file "my collection.json"
+
+Q: "액세스가 거부되었습니다" 오류  
+A: 관리자 권한으로 터미널 실행 또는 다른 폴더에서 실행
+
+Q: 네트워크 오류
+A: 방화벽/프록시 설정 확인, VPN 연결 해제 후 재시도
+
+📞 지원
+-------
+- GitHub Issues: 문제 발생시 이슈 등록
+- 이메일: 개발팀 문의
+
+===============================================
+마지막 업데이트: 2024-09-24
+===============================================
