@@ -1,0 +1,23 @@
+# Claude Code 관련 파일들
+CLAUDE.md
+.claude/
+
+# Go 빌드 결과물
+postman-tester
+postman-tester-*
+*.exe
+builds/
+
+# 테스트 결과 파일들
+*.html
+*.json
+!test-collection.json
+!go.mod
+
+# 임시 파일들
+*.tmp
+*.log
+
+# OS 관련
+.DS_Store
+Thumbs.db
