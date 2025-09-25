@@ -14,7 +14,7 @@ var (
 	directory = flag.String("dir", "./postman", "Postman 컬렉션 파일들이 있는 디렉토리")
 	file      = flag.String("file", "", "단일 Postman 컬렉션 파일 (이 옵션 사용시 -dir 무시)")
 	output    = flag.String("output", "", "결과를 저장할 파일 (선택사항, 기본값: 콘솔 출력)")
-	format    = flag.String("format", "text", "출력 형식 (text, json, html)")
+	format    = flag.String("format", "text", "출력 형식 (text, json, html, csv)")
 	parallel  = flag.Int("parallel", 1, "병렬 실행할 컬렉션 수 (기본값: 1)")
 	timeout   = flag.Int("timeout", 30, "요청 타임아웃 (초, 기본값: 30)")
 	verbose   = flag.Bool("verbose", false, "상세 출력")

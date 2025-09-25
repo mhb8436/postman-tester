@@ -24,6 +24,8 @@ func (r *Reporter) Print(summaries []*TestSummary) {
 		r.printJSON(summaries)
 	case "html":
 		r.printHTML(summaries)
+	case "csv":
+		r.printCSV(summaries)
 	default:
 		r.printText(summaries)
 	}
@@ -38,6 +40,8 @@ func (r *Reporter) SaveToFile(summaries []*TestSummary, filename string) error {
 		content, err = r.generateJSON(summaries)
 	case "html":
 		content, err = r.generateHTML(summaries)
+	case "csv":
+		content, err = r.generateCSV(summaries)
 	default:
 		content, err = r.generateText(summaries)
 	}
@@ -86,6 +90,61 @@ func (r *Reporter) generateText(summaries []*TestSummary) (string, error) {
 	}
 
 	return sb.String(), nil
+}
+
+func (r *Reporter) printCSV(summaries []*TestSummary) {
+	content, _ := r.generateCSV(summaries)
+	fmt.Print(content)
+}
+
+func (r *Reporter) generateCSV(summaries []*TestSummary) (string, error) {
+	var sb strings.Builder
+	
+	// UTF-8 BOM 추가 (Excel에서 한글 제대로 표시하기 위함)
+	sb.WriteString("\uFEFF")
+	
+	// CSV 헤더
+	sb.WriteString("Collection,FilePath,TestName,Method,URL,StatusCode,Success,ResponseTime,ErrorMessage\n")
+	
+	// 각 컬렉션의 테스트 결과를 CSV 행으로 변환
+	for _, summary := range summaries {
+		for _, result := range summary.Results {
+			// CSV 필드 값들을 이스케이프 처리
+			collection := escapeCSV(summary.CollectionName)
+			filePath := escapeCSV(summary.FilePath)
+			testName := escapeCSV(result.Name)
+			method := escapeCSV(result.Method)
+			url := escapeCSV(result.URL)
+			statusCode := fmt.Sprintf("%d", result.StatusCode)
+			success := "true"
+			if !result.Success {
+				success = "false"
+			}
+			responseTime := fmt.Sprintf("%.3f", result.ResponseTime.Seconds())
+			errorMessage := escapeCSV(result.ErrorMessage)
+			
+			sb.WriteString(fmt.Sprintf("%s,%s,%s,%s,%s,%s,%s,%s,%s\n",
+				collection, filePath, testName, method, url, statusCode, success, responseTime, errorMessage))
+		}
+	}
+	
+	return sb.String(), nil
+}
+
+// CSV 필드 값에 대한 이스케이프 처리
+func escapeCSV(value string) string {
+	// 빈 값 처리
+	if value == "" {
+		return ""
+	}
+	
+	// 쌍따옴표, 쉼표, 줄바꿈이 포함된 경우 쌍따옴표로 감싸고 내부 쌍따옴표는 두 번 반복
+	if strings.Contains(value, "\"") || strings.Contains(value, ",") || strings.Contains(value, "\n") {
+		value = strings.ReplaceAll(value, "\"", "\"\"")
+		return "\"" + value + "\""
+	}
+	
+	return value
 }
 
 func (r *Reporter) printJSON(summaries []*TestSummary) {

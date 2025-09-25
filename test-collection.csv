@@ -1,0 +1,49 @@
+📊 상세 테스트 결과
+===================================================
+
+[1] JSONPlaceholder API 테스트
+파일: test-collection.json
+실행시간: 1.77s
+결과: 10개 성공, 0개 실패
+-------------------------------
+  [1.1] ✅ 모든 게시물 조회
+        GET https://jsonplaceholder.typicode.com/posts
+        응답: HTTP 200 (0.23s)
+
+  [1.2] ✅ 특정 게시물 조회
+        GET https://jsonplaceholder.typicode.com/posts/1
+        응답: HTTP 200 (0.08s)
+
+  [1.3] ✅ 모든 사용자 조회
+        GET https://jsonplaceholder.typicode.com/users
+        응답: HTTP 200 (0.07s)
+
+  [1.4] ✅ 특정 사용자 조회
+        GET https://jsonplaceholder.typicode.com/users/1
+        응답: HTTP 200 (0.07s)
+
+  [1.5] ✅ 새 게시물 생성
+        POST https://jsonplaceholder.typicode.com/posts
+        응답: HTTP 201 (0.24s)
+
+  [1.6] ✅ 게시물 업데이트
+        PUT https://jsonplaceholder.typicode.com/posts/1
+        응답: HTTP 200 (0.59s)
+
+  [1.7] ✅ 게시물 삭제
+        DELETE https://jsonplaceholder.typicode.com/posts/1
+        응답: HTTP 200 (0.24s)
+
+  [1.8] ✅ 댓글 조회
+        GET https://jsonplaceholder.typicode.com/posts/1/comments
+        응답: HTTP 200 (0.08s)
+
+  [1.9] ✅ 앨범 조회
+        GET https://jsonplaceholder.typicode.com/albums
+        응답: HTTP 200 (0.09s)
+
+  [1.10] ✅ 사진 조회
+        GET https://jsonplaceholder.typicode.com/photos?albumId=1&_limit=5
+        응답: HTTP 200 (0.07s)
+
+
