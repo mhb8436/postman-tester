@@ -1,0 +1,11 @@
+﻿Collection,FilePath,TestName,Method,URL,StatusCode,Success,ResponseTime,ErrorMessage
+JSONPlaceholder API 테스트,test2.json,모든 게시물 조회,GET,https://jsonplaceholder.typicode.com/posts,200,true,0.217,
+JSONPlaceholder API 테스트,test2.json,특정 게시물 조회,GET,https://jsonplaceholder.typicode.com/posts/1,200,true,0.072,
+JSONPlaceholder API 테스트,test2.json,모든 사용자 조회,GET,https://jsonplaceholder.typicode.com/users,200,true,0.071,
+JSONPlaceholder API 테스트,test2.json,특정 사용자 조회,GET,https://jsonplaceholder.typicode.com/users/1,200,true,0.075,
+JSONPlaceholder API 테스트,test2.json,새 게시물 생성,POST,https://jsonplaceholder.typicode.com/posts,201,true,0.240,
+JSONPlaceholder API 테스트,test2.json,게시물 업데이트,PUT,https://jsonplaceholder.typicode.com/posts/1,200,true,0.587,
+JSONPlaceholder API 테스트,test2.json,게시물 삭제,DELETE,https://jsonplaceholder.typicode.com/posts/1,200,true,0.247,
+JSONPlaceholder API 테스트,test2.json,댓글 조회,GET,https://jsonplaceholder.typicode.com/posts/1/comments,200,true,0.077,
+JSONPlaceholder API 테스트,test2.json,앨범 조회,GET,https://jsonplaceholder.typicode.com/albums,200,true,0.082,
+JSONPlaceholder API 테스트,test2.json,사진 조회,GET,https://jsonplaceholder.typicode.com/photos?albumId=1&_limit=5,200,true,0.138,
